@@ -40,11 +40,7 @@ def create_app(config_class=Config):
         logger.info("=" * 50)
     
     # 启用CORS
-    CORS(app, resources={r"/api/*": {
-        "origins": ["http://31.97.63.98:3000", "http://localhost:3000"],
-        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Accept-Language"]
-    }})
+    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
     
     # 注册模拟进程清理函数（确保服务器关闭时终止所有模拟进程）
     from .services.simulation_runner import SimulationRunner
