@@ -2,10 +2,10 @@
   <div class="home-container">
     <!-- 顶部导航栏 -->
     <nav class="navbar">
-      <div class="nav-brand">MIROFISH</div>
+      <div class="nav-brand">{{ $t('nav.brand') }}</div>
       <div class="nav-links">
         <LanguageSwitcher />
-        <a href="https://github.com/666ghj/MiroFish" target="_blank" class="github-link">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link">
           {{ $t('nav.visitGithub') }} <span class="arrow">↗</span>
         </a>
       </div>
@@ -44,7 +44,7 @@
         <div class="hero-right">
           <!-- Logo 区域 -->
           <div class="logo-container">
-            <img src="../assets/logo/MiroFish_logo_left.jpeg" alt="MiroFish Logo" class="hero-logo" />
+            <GeniusLogo class="hero-logo" :label="$t('nav.brand')" />
           </div>
           
           <button class="scroll-down-btn" @click="scrollToBottom">
@@ -216,6 +216,7 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import HistoryDatabase from '../components/HistoryDatabase.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
+import GeniusLogo from '../components/GeniusLogo.vue'
 
 const router = useRouter()
 
@@ -314,12 +315,12 @@ const startSimulation = () => {
 <style scoped>
 /* 全局变量与重置 */
 :root {
-  --black: #000000;
-  --white: #FFFFFF;
-  --orange: #FF4500;
-  --gray-light: #F5F5F5;
-  --gray-text: #666666;
-  --border: #E5E5E5;
+  --black: #1e293b;
+  --white: #ffffff;
+  --orange: #2563eb;
+  --gray-light: #f1f5f9;
+  --gray-text: #64748b;
+  --border: #e2e8f0;
   /* 
     使用 Space Grotesk 作为主要标题字体，JetBrains Mono 作为代码/标签字体
     确保已在 index.html 引入这些 Google Fonts 
@@ -331,7 +332,7 @@ const startSimulation = () => {
 
 .home-container {
   min-height: 100vh;
-  background: var(--white);
+  background: var(--gray-light);
   font-family: var(--font-sans);
   color: var(--black);
 }
@@ -339,8 +340,9 @@ const startSimulation = () => {
 /* 顶部导航 */
 .navbar {
   height: 60px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
+  border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -361,7 +363,7 @@ const startSimulation = () => {
 }
 
 .github-link {
-  color: var(--white);
+  color: var(--gray-text);
   text-decoration: none;
   font-family: var(--font-mono);
   font-size: 0.9rem;
@@ -434,7 +436,7 @@ const startSimulation = () => {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #000000 0%, #444444 100%);
+  background: linear-gradient(90deg, #1e40af 0%, #6366f1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -466,7 +468,7 @@ const startSimulation = () => {
 }
 
 .highlight-code {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(37, 99, 235, 0.08);
   padding: 2px 6px;
   border-radius: 2px;
   font-family: var(--font-mono);
@@ -518,7 +520,7 @@ const startSimulation = () => {
 }
 
 .hero-logo {
-  max-width: 500px; /* 调整logo大小 */
+  max-width: 440px;
   width: 100%;
 }
 
@@ -825,7 +827,7 @@ const startSimulation = () => {
 
 .start-engine-btn {
   width: 100%;
-  background: var(--black);
+  background: var(--orange);
   color: var(--white);
   border: none;
   padding: 20px;
@@ -844,14 +846,14 @@ const startSimulation = () => {
 
 /* 可点击状态（非禁用） */
 .start-engine-btn:not(:disabled) {
-  background: var(--black);
-  border: 1px solid var(--black);
+  background: var(--orange);
+  border: 1px solid #1d4ed8;
   animation: pulse-border 2s infinite;
 }
 
 .start-engine-btn:hover:not(:disabled) {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: #1d4ed8;
+  border-color: #1d4ed8;
   transform: translateY(-2px);
 }
 
@@ -869,9 +871,9 @@ const startSimulation = () => {
 
 /* 引导动画：微妙的边框脉冲 */
 @keyframes pulse-border {
-  0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); }
-  70% { box-shadow: 0 0 0 6px rgba(0, 0, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.35); }
+  70% { box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
 }
 
 /* 响应式适配 */

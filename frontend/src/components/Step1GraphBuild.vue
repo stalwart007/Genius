@@ -449,7 +449,7 @@ watch(() => props.systemLogs.length, () => {
     font-size: 9px;
     font-weight: 700;
     color: #FFF;
-    background: #000;
+    background: var(--gf-accent, #2563eb);
     padding: 2px 6px;
     border-radius: 2px;
     text-transform: uppercase;
@@ -603,7 +603,7 @@ watch(() => props.systemLogs.length, () => {
 /* Step 03 Button */
 .action-btn {
   width: 100%;
-  background: #000;
+  background: var(--gf-accent, #2563eb);
   color: #FFF;
   border: none;
   padding: 14px;
@@ -645,22 +645,22 @@ watch(() => props.systemLogs.length, () => {
 
 /* System Logs */
 .system-logs {
-  background: #000;
-  color: #DDD;
+  background: #f1f5f9;
+  color: #334155;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
-  border-top: 1px solid #222;
+  border-top: 1px solid #e2e8f0;
   flex-shrink: 0;
 }
 
 .log-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #cbd5e1;
   padding-bottom: 8px;
   margin-bottom: 8px;
   font-size: 10px;
-  color: #888;
+  color: #64748b;
 }
 
 .log-content {
@@ -677,7 +677,7 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .log-content::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #94a3b8;
   border-radius: 2px;
 }
 
@@ -689,12 +689,12 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .log-time {
-  color: #666;
+  color: #64748b;
   min-width: 75px;
 }
 
 .log-msg {
-  color: #CCC;
+  color: #475569;
   word-break: break-all;
 }
 </style>

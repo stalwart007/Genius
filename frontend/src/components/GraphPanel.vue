@@ -1216,7 +1216,7 @@ input:checked + .slider:before {
   bottom: 160px; /* Moved up from 80px */
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(30, 41, 59, 0.4);
   backdrop-filter: blur(8px);
   color: #fff;
   padding: 10px 20px;
@@ -1252,7 +1252,7 @@ input:checked + .slider:before {
 
 /* 模拟结束后的提示样式 */
 .graph-building-hint.finished-hint {
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(30, 41, 59, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 

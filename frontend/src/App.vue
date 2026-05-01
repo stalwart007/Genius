@@ -3,10 +3,35 @@
 </template>
 
 <script setup>
-// 使用 Vue Router 来管理页面
+import { watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
+
+watch(
+  () => [locale.value, t('meta.title'), t('meta.description')],
+  () => {
+    document.title = t('meta.title')
+    const meta = document.querySelector('meta[name="description"]')
+    if (meta) meta.setAttribute('content', t('meta.description'))
+  },
+  { immediate: true }
+)
 </script>
 
 <style>
+/* Light theme tokens (shared across pages) */
+:root {
+  --gf-bg: #f8fafc;
+  --gf-surface: #ffffff;
+  --gf-text: #1e293b;
+  --gf-text-muted: #64748b;
+  --gf-accent: #2563eb;
+  --gf-accent-hover: #1d4ed8;
+  --gf-accent-soft: #eff6ff;
+  --gf-border: #e2e8f0;
+}
+
 /* 全局样式重置 */
 * {
   margin: 0;
@@ -15,11 +40,11 @@
 }
 
 #app {
-  font-family: 'JetBrains Mono', 'Space Grotesk', 'Noto Sans SC', monospace;
+  font-family: 'JetBrains Mono', 'Space Grotesk', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #000000;
-  background-color: #ffffff;
+  color: var(--gf-text);
+  background-color: var(--gf-bg);
 }
 
 /* 滚动条样式 */
@@ -29,15 +54,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: #cbd5e1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: #94a3b8;
 }
 
 /* 全局按钮样式 */

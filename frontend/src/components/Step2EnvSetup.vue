@@ -1139,7 +1139,7 @@ onUnmounted(() => {
 
 .step-card.active .step-num,
 .step-card.completed .step-num {
-  color: #000;
+  color: var(--gf-text, #1e293b);
 }
 
 .step-title {
@@ -1198,7 +1198,7 @@ onUnmounted(() => {
 }
 
 .action-btn.primary {
-  background: #000;
+  background: var(--gf-accent, #2563eb);
   color: #FFF;
 }
 
@@ -1288,7 +1288,7 @@ onUnmounted(() => {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: var(--gf-text, #1e293b);
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -1368,7 +1368,7 @@ onUnmounted(() => {
 .profile-realname {
   font-size: 14px;
   font-weight: 700;
-  color: #000;
+  color: var(--gf-text, #1e293b);
 }
 
 .profile-username {
@@ -1816,7 +1816,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(30, 41, 59, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1859,7 +1859,7 @@ onUnmounted(() => {
 .modal-realname {
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: var(--gf-text, #1e293b);
 }
 
 .modal-username {
@@ -2053,22 +2053,22 @@ onUnmounted(() => {
 
 /* System Logs */
 .system-logs {
-  background: #000;
-  color: #DDD;
+  background: #f1f5f9;
+  color: #334155;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
-  border-top: 1px solid #222;
+  border-top: 1px solid #e2e8f0;
   flex-shrink: 0;
 }
 
 .log-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #cbd5e1;
   padding-bottom: 8px;
   margin-bottom: 8px;
   font-size: 10px;
-  color: #888;
+  color: #64748b;
 }
 
 .log-content {
@@ -2085,7 +2085,7 @@ onUnmounted(() => {
 }
 
 .log-content::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #94a3b8;
   border-radius: 2px;
 }
 
@@ -2097,12 +2097,12 @@ onUnmounted(() => {
 }
 
 .log-time {
-  color: #666;
+  color: #64748b;
   min-width: 75px;
 }
 
 .log-msg {
-  color: #CCC;
+  color: #475569;
   word-break: break-all;
 }
 
@@ -2358,7 +2358,7 @@ onUnmounted(() => {
 }
 
 .switch-control input:checked + .switch-track {
-  background: #000;
+  background: var(--gf-accent, #2563eb);
 }
 
 .switch-control input:checked + .switch-track::after {
@@ -2397,7 +2397,7 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 24px;
   font-weight: 700;
-  color: #000;
+  color: var(--gf-text, #1e293b);
 }
 
 .val-unit {
@@ -2427,7 +2427,7 @@ onUnmounted(() => {
   background: #E2E8F0;
   border-radius: 2px;
   outline: none;
-  background-image: linear-gradient(#000, #000);
+  background-image: linear-gradient(var(--gf-accent, #2563eb), var(--gf-accent, #2563eb));
   background-size: var(--percent, 0%) 100%;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -2439,7 +2439,7 @@ onUnmounted(() => {
   height: 16px;
   border-radius: 50%;
   background: #FFF;
-  border: 2px solid #000;
+  border: 2px solid var(--gf-accent, #2563eb);
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   transition: transform 0.1s;
@@ -2472,11 +2472,11 @@ onUnmounted(() => {
 }
 
 .mark-recommend:hover {
-  color: #000;
+  color: var(--gf-text, #1e293b);
 }
 
 .mark-recommend.active {
-  color: #000;
+  color: var(--gf-text, #1e293b);
   font-weight: 600;
 }
 
@@ -2554,7 +2554,7 @@ onUnmounted(() => {
 .highlight-tip {
   margin-top: 4px !important;
   font-size: 12px !important;
-  color: #000 !important;
+  color: var(--gf-text, #1e293b) !important;
   font-weight: 500;
   cursor: pointer;
 }
